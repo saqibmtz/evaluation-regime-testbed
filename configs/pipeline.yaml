@@ -1,0 +1,35 @@
+# AI review committee configuration.
+# Models are served through any OpenAI-compatible endpoint (e.g., a local vLLM
+# server or OpenRouter). The pilot used open-weight models throughout.
+
+endpoint:
+  base_url: http://localhost:8000/v1   # e.g. https://openrouter.ai/api/v1
+  api_key_env: LLM_API_KEY             # name of the environment variable holding the key
+
+committee:                             # focus notes, persona reviews, synthesis
+  model: google/gemma-4-31B-it
+  temperature: 0.2
+  max_tokens: 1500
+
+decision_heads:                        # final accept/reject stage
+  deepseek:
+    model: deepseek-ai/DeepSeek-V3.1
+    temperature: 0.0
+    max_tokens: 800
+  gemma9b:
+    model: google/gemma-2-9b-it
+    temperature: 0.0
+    max_tokens: 800
+    preamble_file: null                # pilot variant prepended a calibration preamble
+
+personas: [empiricist, theorist, systems_pragmatist, novelty_gatekeeper]
+
+# Numeric committee scores are a weighted mean of persona scores.
+persona_weights:
+  empiricist: 1
+  theorist: 1
+  systems_pragmatist: 1
+  novelty_gatekeeper: 1
+
+section_chars: 12000   # text passed to each focus-note call
+excerpt_chars: 6000    # full-text excerpt passed to the decision stage

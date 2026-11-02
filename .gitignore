@@ -1,0 +1,10 @@
+results/
+data/raw/
+data/built/
+pdfs/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.local.txt
+.DS_Store

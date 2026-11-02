@@ -1,0 +1,19 @@
+A Toy Method for Demonstrating the Committee Pipeline
+
+Abstract
+This is a synthetic, placeholder paper used only to demonstrate the input format of the AI committee pipeline. It does not describe real research.
+
+1 Introduction
+We study a toy problem and propose a toy method. The contribution is illustrative.
+
+2 Method
+The toy method applies a simple transformation to its input. Equation (1) defines it.
+
+3 Experiments
+We compare the toy method with a baseline on a toy dataset (Table 1, Figure 1). We include an ablation.
+
+4 Conclusion
+The toy method is easy to run. Code will be released.
+
+References
+[1] A placeholder reference.
